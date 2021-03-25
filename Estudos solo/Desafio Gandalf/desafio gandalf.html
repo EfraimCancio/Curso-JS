@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Gandalf</title>
+    <link rel="stylesheet" href="gandalf.css">
+</head>
+<body>
+    <header>
+        <h1>A viagem da comitiva</h1>
+
+    </header>
+    <section>
+        <div id="dados">
+            <p>Gandalf informou que <input type="number" name="anões" id="anoes"> anões ajudarão na aventura.</p>
+            <p>Ele também informou que a viagem será de <input type="number" name="distancia" id="dist">Km, até a montanha do dragão.</p>
+            <p><input type="button" value="Mostrar dados da viagem" onclick="calcular()"></p>
+        </div>
+        <div id="resultado">
+            É o seguinte:
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Pai Efras </p>
+    </footer>
+    <script>
+        function calcular(){
+            let n = document.getElementById('anoes')
+            let x = document.getElementById('dist')
+            let res = document.getElementById('resultado')
+            let n1 = Number(n.value) 
+            let n2 = Number(x.value)
+                
+            if (1 < n1 <= 100 && 1 < n2 <= 1000) {
+                let c = n2 / (n1 + 2)
+                res.innerHTML = `A comitiva tera ${ n1 + 2} viajantes e  levará ${c} dias para chegar à montanha do Dragão.`
+            } else {
+                res.innerHTML = `De as verdadeiras informaçõe de Gandalf.`
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(13, 13, 128);
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(8, 160, 41);
+            background: rgb(217, 231, 10);
+            text-align: center;
+            margin: 20px;
+            padding: 30px;           
+        }
+        h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(8, 160, 41);
+            background: rgb(217, 231, 10);
+            text-align: center;
+            margin: 20px;
+            padding: 30px;
+        }
+        input {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            background: rgb(217, 231, 10);  
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 15pt;  
+            color:rgb(8, 160, 41);    
+        } 
+        div#resultado {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25pt;
+            color: rgb(8, 160, 41);
+            background: rgb(217, 231, 10);
+            text-align: center;
+            margin: 20px;
+            padding: 30px;           
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Sua Nacionalidade</h1>
+    <h2>Em qual pais você nasceu? </h2><input type="text" id="pais"><br>
+    <input  id="botao" type="button" value="Verificar" onclick= "verificar()">
+    <div id="resultado" >
+
+    </div>
+
+    <script>
+        function verificar() {
+           var p = document.querySelector('input#pais')
+           var res = document.querySelector('div#resultado')
+           res.innerHTML = `<p>Vivendo em ${p.value}.</p>`
+           if (p.value == 'Brasil') {
+               res.innerHTML += '<p>Você é Brasileiro!</p>' 
+           } else {
+               res.innerHTML += '<p>Você é estrangeiro!</p>'
+           }
+        }       
+    </script>
+
+</body>
+</html>
